@@ -206,6 +206,14 @@
       <label for="telefono">Numero di telefono</label>
       <input type="tel" id="telefono" placeholder="+39 333 000 0000" autocomplete="tel" />
     </div>
+    <div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:1.25rem;">
+      <input type="checkbox" id="consenso" style="margin-top:3px; width:16px; height:16px; accent-color:#4CAF50; flex-shrink:0; cursor:pointer;" />
+      <label for="consenso" style="font-size:13px; color:#666; line-height:1.5; cursor:pointer;">
+        Ho letto e accetto il trattamento dei miei dati personali ai sensi del GDPR.
+        <a href="https://fitup.it/privacy-policy/" target="_blank" style="color:#4CAF50;">Privacy Policy</a> e
+        <a href="https://fitup.it/cookie/" target="_blank" style="color:#4CAF50;">Cookie Policy</a>.
+      </label>
+    </div>
     <div class="err" id="errMsg"></div>
     <button class="submit-btn" id="submitBtn" onclick="submitForm()">Confermo la mia partecipazione</button>
   </div>
@@ -246,6 +254,11 @@
     }
     if (!telefono) {
       err.textContent = 'Inserisci il tuo numero di telefono.';
+      err.style.display = 'block';
+      return;
+    }
+    if (!document.getElementById('consenso').checked) {
+      err.textContent = 'Devi accettare la Privacy Policy per procedere.';
       err.style.display = 'block';
       return;
     }
