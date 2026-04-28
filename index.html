@@ -299,5 +299,26 @@
   }
 </script>
 
+
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#1a1a1a; color:#fff; padding:16px 24px; z-index:9999; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; box-shadow: 0 -2px 12px rgba(0,0,0,0.3);">
+  <p style="margin:0; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.6; flex:1; min-width:200px;">
+    Questo sito raccoglie dati personali per la gestione delle iscrizioni.
+    Leggi la nostra <a href="https://fitup.it/privacy-policy/" target="_blank" style="color:#4CAF50;">Privacy Policy</a> e
+    <a href="https://fitup.it/cookie/" target="_blank" style="color:#4CAF50;">Cookie Policy</a>.
+  </p>
+  <button onclick="accettaCookie()" style="background:#4CAF50; color:#fff; border:none; padding:10px 24px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; white-space:nowrap;">Accetto</button>
+</div>
+
+<script>
+  function accettaCookie() {
+    document.getElementById('cookieBanner').style.display = 'none';
+    localStorage.setItem('cookieAccettato', 'true');
+  }
+  if (!localStorage.getItem('cookieAccettato')) {
+    document.getElementById('cookieBanner').style.display = 'flex';
+  }
+</script>
+
 </body>
 </html>
