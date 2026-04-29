@@ -9,6 +9,7 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-text-size-adjust: 100%;
       background-color: #111;
       background-image:
         radial-gradient(ellipse at 20% 50%, rgba(164,196,0,0.12) 0%, transparent 60%),
@@ -269,6 +270,47 @@
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem 0.75rem 6rem;
+        align-items: flex-start;
+        padding-top: 1.5rem;
+      }
+      .card {
+        border-radius: 12px;
+      }
+      .card-header {
+        padding: 1.5rem 1.25rem 1.25rem;
+      }
+      .card-header img {
+        width: 130px;
+      }
+      .card-body {
+        padding: 1.25rem;
+      }
+      .field input {
+        font-size: 16px; /* evita zoom automatico su iOS */
+        padding: 13px 12px;
+      }
+      .submit-btn {
+        padding: 16px;
+        font-size: 16px;
+      }
+      #cookieBanner {
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cookie-btn-wrap {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      .btn-accetta, .btn-rifiuta {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
